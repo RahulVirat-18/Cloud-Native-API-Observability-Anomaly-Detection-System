@@ -376,9 +376,9 @@ aws apigateway create-rest-api --name api-monitor-api
 
 ---
 
-## 💸 Zero-Cost Strategy
+ 
 
-**AWS Free Tier Coverage:**
+**AWS Cost Management Coverage:**
 - ✅ Lambda: 1M requests/month free
 - ✅ DynamoDB: 25GB storage + 25 RCU/WCU free
 - ✅ API Gateway: 1M calls/month free
@@ -390,7 +390,7 @@ aws apigateway create-rest-api --name api-monitor-api
 - 3 regions × 1 API = 3 DynamoDB items/poll
 - Sliding window = fixed storage per region
 
-**Estimated Monthly Cost**: **$0.00** (within Free Tier)
+ 
 
 ---
 
