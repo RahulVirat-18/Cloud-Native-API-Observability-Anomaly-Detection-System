@@ -434,5 +434,4 @@ aws apigateway create-rest-api --name api-monitor-api
 ---
 
 **Last Updated**: March 2026  
-**Author**: Your Name  
-**License**: MIT
+ 
