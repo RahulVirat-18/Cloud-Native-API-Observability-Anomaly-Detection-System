@@ -1,0 +1,87 @@
+# Environment & Virtual Libraries
+env/
+venv/
+ENV/
+.venv
+*.egg-info/
+*.egg
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Dependency eggs
+*.egg-info/
+dist/
+build/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+Thumbs.db
+.DS_Store
+.env.local
+.env.*.local
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Local Development
+*.log
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+# AWS & Deployment
+.aws-sam/
+sam-tests/
+.serverless/
+serverless.yml.local
+
+# Node (if used with frontend build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+*.swp
+
+# Project-Specific Exclusions
+# ============================================
+
+# Excluded Directories (Development artifacts & dependencies)
+API_Behaviour_Analysis/
+lambda_dist/
+env/
+
+# Temporary build outputs
+temp/
+tmp/
+.temp/
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Compiled/minified assets (if applicable)
+static/dist/

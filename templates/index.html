@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Intelligence Dashboard</title>
+
+```
+<!-- CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+```
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+```
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <div class="brand">API Intelligence 🧠</div>
+
+    <nav class="nav-menu">
+        <a href="#" class="nav-item active" data-page="dashboard">Dashboard</a>
+        <a href="#" class="nav-item" data-page="error">Error Rate</a>
+        <a href="#" class="nav-item" data-page="region">Region Simulation</a>
+        <a href="#" class="nav-item" data-page="alerts">Alerts & History</a>
+        <a href="#" class="nav-item" data-page="settings">Settings</a>
+    </nav>
+
+    <div class="logout-area">
+        <button id="logoutBtn">Logout</button>
+    </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+    <!-- ================= DASHBOARD ================= -->
+    <section class="page active" id="dashboardPage">
+
+        <!-- API INPUT -->
+        <div class="api-bar">
+            <input type="text" id="apiUrl" placeholder="Enter API URL (https://...)">
+            <button id="startBtn">START MONITORING</button>
+        </div>
+
+        <!-- MAIN GRID -->
+        <div class="dashboard-grid">
+
+            <!-- GRAPH -->
+            <div class="graph-container">
+                <div class="status-bar">
+                    <span id="healthStatus">⚪ Waiting...</span>
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    No API added. Add one to start monitoring.
+                </div>
+
+                <canvas id="latencyChart"></canvas>
+            </div>
+
+            <!-- LOG PANEL -->
+            <div class="log-panel">
+                <h3>Live Logs</h3>
+                <div id="logEntries" class="logs"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= ERROR RATE ================= -->
+    <section class="page" id="errorPage">
+        <h2>Error Rate Overview</h2>
+
+        <div class="error-cards">
+            <div class="card">
+                <h4>Total Requests</h4>
+                <p id="totalRequests">0</p>
+            </div>
+
+            <div class="card">
+                <h4>Failed Requests</h4>
+                <p id="failedRequests">0</p>
+            </div>
+
+            <div class="card">
+                <h4>Error %</h4>
+                <p id="errorPercent">0%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= REGION ================= -->
+    <section class="page" id="regionPage">
+        <h2>Region Simulation</h2>
+
+        <div class="region-grid">
+            <div class="region-card">
+                <h4>India</h4>
+                <canvas id="indiaChart"></canvas>
+            </div>
+
+            <div class="region-card">
+                <h4>US</h4>
+                <canvas id="usChart"></canvas>
+            </div>
+
+            <div class="region-card">
+                <h4>EU</h4>
+                <canvas id="euChart"></canvas>
+            </div>
+
+            <div class="region-card insights">
+                <h4>Insights</h4>
+                <p id="fastestRegion">Fastest: -</p>
+                <p id="slowestRegion">Slowest: -</p>
+                <p id="avgLatency">Avg Latency: -</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ALERTS ================= -->
+    <section class="page" id="alertsPage">
+        <h2>Alerts & History</h2>
+
+        <div class="alerts-actions">
+            <button id="clearAlerts">Clear All</button>
+            <button id="downloadCSV">Download CSV</button>
+        </div>
+
+        <table class="alerts-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Latency (ms)</th>
+                    <th>Error %</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="alertsTableBody">
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ================= SETTINGS ================= -->
+    <section class="page" id="settingsPage">
+        <h2>Settings</h2>
+
+        <div class="settings-block">
+            <label>Email for Alerts</label>
+            <input type="email" id="emailInput" placeholder="Enter email">
+            
+            <div class="toggle">
+                <input type="checkbox" id="emailToggle">
+                <label for="emailToggle">Enable Email Alerts</label>
+            </div>
+        </div>
+
+        <div class="settings-block">
+            <label>Theme</label>
+            <div class="toggle">
+                <input type="checkbox" id="themeToggle">
+                <label for="themeToggle">Dark Mode</label>
+            </div>
+        </div>
+    </section>
+
+</main>
+```
+
+</div>
+
+<!-- JS -->
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
