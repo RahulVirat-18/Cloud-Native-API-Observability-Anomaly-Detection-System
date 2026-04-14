@@ -360,11 +360,7 @@ aws apigateway create-rest-api --name api-monitor-api
 
 ---
 
-## 💼 Resume Impact
-
-### Strong One-Liner:
-> "Built a cloud-native, real-time API observability dashboard with statistical anomaly detection and multi-region performance simulation using serverless AWS architecture."
-
+ 
 ### Skills Demonstrated:
 ✅ **Real-Time Systems**: Live data streaming, event-driven architecture  
 ✅ **Cloud-Native**: Serverless (Lambda), managed databases (DynamoDB), API Gateway  
